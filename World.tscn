@@ -1,0 +1,131 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://environment/raw_assets/grass_lowres.png" type="Texture" id=1]
+[ext_resource path="res://characters/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://environment/assets/brickwall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://environment/assets/shed.tscn" type="PackedScene" id=4]
+[ext_resource path="res://PickUps/ShotgunAmmoPickUp.tscn" type="PackedScene" id=11]
+[ext_resource path="res://characters/enemies/BirdMonster.tscn" type="PackedScene" id=12]
+[ext_resource path="res://PickUps/HealthPickUp.tscn" type="PackedScene" id=13]
+[ext_resource path="res://characters/enemies/ReptileMonster.tscn" type="PackedScene" id=15]
+[ext_resource path="res://PickUps/ShotgunPickUp.tscn" type="PackedScene" id=16]
+[ext_resource path="res://PickUps/RocketLauncherPickUp.tscn" type="PackedScene" id=17]
+[ext_resource path="res://PickUps/RocketLauncherAmmoPickUp.tscn" type="PackedScene" id=18]
+[ext_resource path="res://PickUps/MachineGunAmmoPickUp.tscn" type="PackedScene" id=19]
+[ext_resource path="res://PickUps/MachineGunPickUp.tscn" type="PackedScene" id=20]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 1 )
+uv1_scale = Vector3( 50, 50, 0 )
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+size = Vector3( 100, 2, 100 )
+
+[sub_resource type="NavigationMesh" id=3]
+vertices = PoolVector3Array( -37.7, 1.4, -49.4, -49.4, 1.4, -49.4, -49.4, 1.4, -43.4, -37.7, 1.4, -49.4, -49.4, 1.4, -43.4, -49.4, 1.4, -37.1, -37.7, 1.4, -49.4, -49.4, 1.4, -37.1, -49.4, 1.4, -31.1, -37.7, 1.4, -49.4, -49.4, 1.4, -31.1, -49.4, 1.4, -24.8, -37.7, 1.4, -49.4, -49.4, 1.4, -24.8, -49.4, 1.4, -18.8, -25.7, 1.4, -49.4, -37.7, 1.4, -49.4, -49.4, 1.4, -18.8, -49.4, 1.4, -12.5, -49.4, 1.4, -6.2, -2.9, 1.4, -1.4, -2, 1.4, -1.7, -14, 1.4, -49.4, -25.7, 1.4, -49.4, -49.4, 1.4, -12.5, -49.4, 1.4, 0.100002, -2.9, 1.4, 0.400002, -2.9, 1.4, -1.4, -49.4, 1.4, -6.2, -2, 1.4, -1.7, -2, 1.4, -49.4, -14, 1.4, -49.4, 6.7, 1.4, 6.1, 6.7, 1.4, 3.7, 1.3, 1.4, 3.7, -0.799999, 1.4, 6.1, 4, 1.4, -0.199997, 4, 1.4, -49.4, -2, 1.4, -49.4, -0.799999, 1.4, -1.4, 1.3, 1.4, 0.100002, -0.799999, 1.4, -1.4, -0.799999, 1.4, 6.1, 1.3, 1.4, 3.7, 1.3, 1.4, 0.100002, -2, 1.4, -49.4, -2, 1.4, -1.7, -0.799999, 1.4, -1.4, 6.7, 1.4, 3.7, 6.7, 1.4, 6.1, 10.6, 1.4, 6.1, 6.7, 1.4, 0.100002, 6.7, 1.4, 3.7, 10.6, 1.4, 6.1, 49.3, 1.4, -0.199997, 49.3, 1.4, -7.1, 49.3, 1.4, -42.5, 49.3, 1.4, -49.4, 37.9, 1.4, -49.4, 49.3, 1.4, -35.3, 49.3, 1.4, -42.5, 37.9, 1.4, -49.4, 49.3, 1.4, -28.4, 49.3, 1.4, -35.3, 37.9, 1.4, -49.4, 49.3, 1.4, -21.2, 49.3, 1.4, -28.4, 37.9, 1.4, -49.4, 26.5, 1.4, -49.4, 49.3, 1.4, -14.3, 49.3, 1.4, -21.2, 26.5, 1.4, -49.4, 15.1, 1.4, -49.4, 10.6, 1.4, 6.1, 10.9, 1.4, 7, 49.3, 1.4, 7, 49.3, 1.4, -0.199997, 6.7, 1.4, 0.100002, 49.3, 1.4, -7.1, 49.3, 1.4, -14.3, 15.1, 1.4, -49.4, 4, 1.4, -49.4, 4, 1.4, -0.199997, -49.4, 1.4, 6.1, -2.9, 1.4, 5.8, -2.9, 1.4, 0.400002, -49.4, 1.4, 0.100002, -49.4, 1.4, 38.5, -49.4, 1.4, 49.3, -37.4, 1.4, 49.3, -49.4, 1.4, 38.5, -37.4, 1.4, 49.3, -31.4, 1.4, 49.3, -49.4, 1.4, 38.5, -31.4, 1.4, 49.3, -25.1, 1.4, 49.3, -49.4, 1.4, 27.7, -7.1, 1.4, 49.3, -2.3, 1.4, 8.2, -2.9, 1.4, 7.6, -13.1, 1.4, 49.3, -49.4, 1.4, 16.9, -49.4, 1.4, 27.7, -25.1, 1.4, 49.3, -0.799999, 1.4, 49.3, -0.499996, 1.4, 8.2, -2.3, 1.4, 8.2, -7.1, 1.4, 49.3, -13.1, 1.4, 49.3, -2.9, 1.4, 7.6, -2.9, 1.4, 5.8, -49.4, 1.4, 6.1, -49.4, 1.4, 16.9, -25.1, 1.4, 49.3, 39.1, 1.4, 49.3, 49.3, 1.4, 49.3, 49.3, 1.4, 38.5, 28.9, 1.4, 49.3, 39.1, 1.4, 49.3, 49.3, 1.4, 38.5, 28.9, 1.4, 49.3, 49.3, 1.4, 38.5, 49.3, 1.4, 28, 18.7, 1.4, 49.3, 10.3, 1.4, 8.2, 8.5, 1.4, 8.2, 8.8, 1.4, 49.3, 18.7, 1.4, 49.3, 49.3, 1.4, 28, 49.3, 1.4, 17.5, 49.3, 1.4, 7, 10.9, 1.4, 7, 10.3, 1.4, 8.2, 49.3, 1.4, 17.5, -0.799999, 1.4, 49.3, 8.8, 1.4, 49.3, 8.5, 1.4, 8.2, -0.499996, 1.4, 8.2 )
+polygons = [ PoolIntArray( 0, 2, 1 ), PoolIntArray( 5, 4, 3 ), PoolIntArray( 8, 7, 6 ), PoolIntArray( 9, 11, 10 ), PoolIntArray( 13, 12, 14 ), PoolIntArray( 17, 16, 18 ), PoolIntArray( 18, 16, 15 ), PoolIntArray( 20, 19, 21 ), PoolIntArray( 21, 19, 24 ), PoolIntArray( 21, 24, 23 ), PoolIntArray( 21, 23, 22 ), PoolIntArray( 26, 25, 27 ), PoolIntArray( 27, 25, 28 ), PoolIntArray( 31, 30, 29 ), PoolIntArray( 33, 32, 34 ), PoolIntArray( 34, 32, 35 ), PoolIntArray( 40, 39, 36 ), PoolIntArray( 36, 39, 37 ), PoolIntArray( 37, 39, 38 ), PoolIntArray( 44, 43, 41 ), PoolIntArray( 41, 43, 42 ), PoolIntArray( 47, 46, 45 ), PoolIntArray( 50, 49, 48 ), PoolIntArray( 52, 51, 53 ), PoolIntArray( 53, 51, 54 ), PoolIntArray( 54, 51, 55 ), PoolIntArray( 58, 57, 56 ), PoolIntArray( 61, 60, 59 ), PoolIntArray( 64, 63, 62 ), PoolIntArray( 66, 65, 67 ), PoolIntArray( 67, 65, 68 ), PoolIntArray( 70, 69, 71 ), PoolIntArray( 71, 69, 72 ), PoolIntArray( 74, 73, 75 ), PoolIntArray( 75, 73, 76 ), PoolIntArray( 77, 82, 78 ), PoolIntArray( 78, 82, 79 ), PoolIntArray( 79, 82, 80 ), PoolIntArray( 80, 82, 81 ), PoolIntArray( 84, 83, 85 ), PoolIntArray( 85, 83, 86 ), PoolIntArray( 89, 88, 87 ), PoolIntArray( 92, 91, 90 ), PoolIntArray( 94, 93, 95 ), PoolIntArray( 95, 93, 96 ), PoolIntArray( 98, 97, 99 ), PoolIntArray( 99, 97, 100 ), PoolIntArray( 103, 102, 101 ), PoolIntArray( 105, 104, 106 ), PoolIntArray( 106, 104, 107 ), PoolIntArray( 109, 108, 110 ), PoolIntArray( 110, 108, 113 ), PoolIntArray( 110, 113, 112 ), PoolIntArray( 110, 112, 111 ), PoolIntArray( 116, 115, 114 ), PoolIntArray( 119, 118, 117 ), PoolIntArray( 121, 120, 122 ), PoolIntArray( 122, 120, 123 ), PoolIntArray( 124, 129, 125 ), PoolIntArray( 125, 129, 128 ), PoolIntArray( 125, 128, 127 ), PoolIntArray( 125, 127, 126 ), PoolIntArray( 131, 130, 132 ), PoolIntArray( 132, 130, 133 ), PoolIntArray( 137, 136, 134 ), PoolIntArray( 134, 136, 135 ) ]
+agent/max_climb = 1.0
+
+[sub_resource type="ProceduralSky" id=4]
+sky_top_color = Color( 0.811765, 0.886275, 0.92549, 1 )
+sun_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="Environment" id=5]
+background_mode = 2
+background_sky = SubResource( 4 )
+
+[sub_resource type="BoxShape" id=6]
+
+[node name="World" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56795, 0 )
+
+[node name="environment" type="Spatial" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground" type="MeshInstance" parent="environment"]
+mesh = SubResource( 2 )
+material/0 = null
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brickwall" parent="environment" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 1, 5 )
+
+[node name="brickwall5" parent="environment" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 1, 1 )
+
+[node name="brickwall4" parent="environment" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7 )
+
+[node name="brickwall2" parent="environment" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 7 )
+
+[node name="brickwall3" parent="environment" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 7 )
+
+[node name="shed" parent="environment" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.01, 2 )
+
+[node name="Player" parent="." groups=[
+"player",
+] instance=ExtResource( 2 )]
+transform = Transform( -0.93202, 0, -0.362406, 0, 1, 0, 0.362406, 0, -0.93202, -2.391, 1, -10.2982 )
+mouse_sens = 0.3
+
+[node name="Navigation" type="Navigation" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+navmesh = SubResource( 3 )
+
+[node name="BirdMonster" parent="Navigation" instance=ExtResource( 12 )]
+transform = Transform( -0.345478, 0, 0.938427, 0, 1, 0, -0.938427, 0, -0.345478, -7.10418, 1.3858, 16.0564 )
+
+[node name="BirdMonster2" parent="Navigation" instance=ExtResource( 12 )]
+transform = Transform( -0.866505, 0, 0.499168, 0, 1, 0, -0.499168, 0, -0.866505, -34.5009, 1.3858, 1.30748 )
+
+[node name="BirdMonster3" parent="Navigation" instance=ExtResource( 12 )]
+transform = Transform( 0.37302, 0, -0.927823, 0, 1, 0, 0.927823, 0, 0.37302, -20.985, 1.3858, -0.101778 )
+
+[node name="ReptileMonster" parent="Navigation" instance=ExtResource( 15 )]
+transform = Transform( -0.922309, 0, -0.386454, 0, 1, 0, 0.386454, 0, -0.922309, 28.9127, 1, 24 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 5 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="WorldEnvironment"]
+transform = Transform( 1, 0, 0, 0, -0.777442, 0.628954, 0, -0.628954, -0.777442, 7.03213, 27.114, -36.9599 )
+shadow_enabled = true
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0 )
+shape = SubResource( 6 )
+
+[node name="HealthPickUp" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67902, -8.64045 )
+
+[node name="MachineGunAmmoPickup" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.11283, 2.04828, -3.97373 )
+
+[node name="MachineGunPickUp" parent="." instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.61758, 1.89457, -4.04522 )
+
+[node name="RocketLauncherAmmoPickUp" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.575, 2.14323, -2.74686 )
+
+[node name="RocketLauncherPickUp" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4176, 1.12528, 0 )
+
+[node name="ShotGunAmmoPickUp" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.29849, 2.26107, 0 )
+
+[node name="ShotGunPickUp" parent="." instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.52927, 1.84914, 0 )
